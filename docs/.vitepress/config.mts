@@ -36,6 +36,49 @@ export default defineConfig({
     logo: '/logo.svg',
     siteTitle: 'RongCloud',
 
+    // 搜索配置
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          },
+          en: {
+            translations: {
+              button: {
+                buttonText: 'Search docs',
+                buttonAriaLabel: 'Search docs'
+              },
+              modal: {
+                noResultsText: 'No results found',
+                resetButtonTitle: 'Clear query',
+                footer: {
+                  selectText: 'select',
+                  navigateText: 'navigate',
+                  closeText: 'close'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
     nav: [
       { text: '产品概述', link: '/overview' },
       {
