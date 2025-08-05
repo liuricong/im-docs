@@ -5,6 +5,9 @@ export default defineConfig({
   description: 'IM文档中心',
   lang: 'zh-CN',
   
+  // GitHub Pages 配置
+  base: '/im-docs/',
+  
   // 开发服务器配置
   vite: {
     server: {
