@@ -1,0 +1,57 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .box { fill: #f5f5f5; stroke: #1890ff; stroke-width: 2; rx: 8; }
+      .arrow { stroke: #1890ff; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .step { font-family: Arial, sans-serif; font-size: 11px; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1890ff" />
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" class="title">App、App Server 与 IM Server 交互关系图</text>
+  
+  <!-- App 客户端 -->
+  <rect x="50" y="80" width="120" height="80" class="box" />
+  <text x="110" y="105" text-anchor="middle" class="label">App 客户端</text>
+  <text x="110" y="120" text-anchor="middle" class="label">(移动端/Web端)</text>
+  
+  <!-- App Server -->
+  <rect x="300" y="80" width="120" height="80" class="box" />
+  <text x="360" y="105" text-anchor="middle" class="label">App Server</text>
+  <text x="360" y="120" text-anchor="middle" class="label">(您的服务器)</text>
+  
+  <!-- IM Server -->
+  <rect x="550" y="80" width="120" height="80" class="box" />
+  <text x="610" y="105" text-anchor="middle" class="label">IM Server</text>
+  <text x="610" y="120" text-anchor="middle" class="label">(融云服务器)</text>
+  
+  <!-- 步骤1: App -> App Server -->
+  <line x1="170" y1="120" x2="300" y2="120" class="arrow" />
+  <text x="235" y="115" text-anchor="middle" class="step">1. 请求登录IM</text>
+  
+  <!-- 步骤2: App Server -> IM Server -->
+  <line x1="420" y1="120" x2="550" y2="120" class="arrow" />
+  <text x="485" y="115" text-anchor="middle" class="step">2. 调用Server API</text>
+  
+  <!-- 步骤3: IM Server -> App Server -->
+  <line x1="550" y1="160" x2="420" y2="160" class="arrow" />
+  <text x="485" y="165" text-anchor="middle" class="step">3. 返回Token</text>
+  
+  <!-- 步骤4: App Server -> App -->
+  <line x1="300" y1="160" x2="170" y2="160" class="arrow" />
+  <text x="235" y="165" text-anchor="middle" class="step">4. 返回Token</text>
+  
+  <!-- 步骤5: App -> IM Server -->
+  <path d="M 110 200 Q 110 280 610 280 Q 610 200 610 160" class="arrow" />
+  <text x="360" y="285" text-anchor="middle" class="step">5. 使用Token连接IM服务</text>
+  
+  <!-- 说明框 -->
+  <rect x="50" y="320" width="700" height="60" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="4" />
+  <text x="60" y="340" class="label">说明：客户端通过App Server获取Token，然后直接连接融云IM服务进行实时通讯</text>
+  <text x="60" y="355" class="label">安全提示：App Secret必须保存在App Server端，切勿在客户端直接调用Server API</text>
+</svg> 
