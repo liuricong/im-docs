@@ -1,12 +1,15 @@
 import { defineConfig } from 'vitepress'
 
+// 根据环境设置 base 路径
+const base = process.env.NODE_ENV === 'production' ? '/im-docs/' : '/'
+
 export default defineConfig({
   title: 'RongCloud',
   description: 'IM文档中心',
   lang: 'zh-CN',
   
   // GitHub Pages 配置
-  base: '/im-docs/',
+  base,
   
   // 开发服务器配置
   vite: {
