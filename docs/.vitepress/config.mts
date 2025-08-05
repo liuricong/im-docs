@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 // 根据环境设置 base 路径
-const base = process.env.NODE_ENV === 'production' ? '/im-docs/' : '/'
+const base = process.env.NODE_ENV === 'production' || process.env.GITHUB_ACTIONS ? '/im-docs/' : '/'
 
 export default defineConfig({
   title: 'RongCloud',
