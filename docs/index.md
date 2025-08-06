@@ -3,10 +3,12 @@ layout: home
 hero:
   name: RongCloud
   text: 即时通讯平台
-  tagline: 将即时通讯能力集成到您的应用中，只需几分钟
+  tagline: 专业、简单、稳定的全通信解决方案，提供即时通信等 SDK 套件，功能丰富、开箱即用。
   image:
     src: /logo.svg
     alt: RongCloud Logo
+    width: 400
+    height: 400
   actions:
     - theme: brand
       text: 开始使用

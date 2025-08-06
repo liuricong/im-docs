@@ -466,7 +466,18 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'theme-color', content: '#1890ff' }]
+    ['meta', { name: 'theme-color', content: '#1890ff' }],
+    ['style', {}, `
+      .VPHomeHero .name {
+        background: linear-gradient(120deg, #1890ff, #722ed1) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+        font-weight: 900 !important;
+        font-size: 3.2rem !important;
+        letter-spacing: -0.02em !important;
+      }
+    `]
   ],
 
   markdown: {
